@@ -19,14 +19,16 @@ class JSONFile {
         } catch (e: IOException) {
             Log.e("GUARDAR", "Error in Writing: " + e.localizedMessage)
         }
+    }
 
-        fun getData(context: Context): String {
-            try {
-                return context.openFileInput(MY_FEELINGS).bufferedReader().readLine()
-            } catch (e: IOException){
-                Log.e("OBTENER", "Error in fetching data: " + e.localizedMessage)
-                return ""
-            }
+    fun getData(context: Context): String {
+        try {
+            return context.openFileInput(MY_FEELINGS).bufferedReader().readLine()
+        } catch (e: IOException){
+            Log.e("OBTENER", "Error in fetching data: " + e.localizedMessage)
+            return ""
         }
     }
+
+
 }
